@@ -1,4 +1,5 @@
 import os
+import sys
 
 from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
