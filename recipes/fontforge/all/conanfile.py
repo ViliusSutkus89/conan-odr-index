@@ -83,9 +83,6 @@ class FontForgeConan(ConanFile):
         cmake_layout(self)
 
     def generate(self):
-        self.run("msgfmt --version", scope="build")
-        self.run("which msgfmt", scope="build")
-        sys.exit(1)
         deps = CMakeDeps(self)
         deps.generate()
 
@@ -100,6 +97,9 @@ class FontForgeConan(ConanFile):
         tc.generate()
 
     def build(self):
+        self.run("msgfmt --version")
+        self.run("which msgfmt")
+        sys.exit(1)
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
