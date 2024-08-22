@@ -100,7 +100,7 @@ class FontForgeConan(ConanFile):
     def build(self):
         self.run("which msgfmt")
         self.run("msgfmt --version")
-        sys.exit(1)
+        # sys.exit(1)
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
