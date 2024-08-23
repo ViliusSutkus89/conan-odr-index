@@ -22,6 +22,7 @@ on:
           - libwmf
           - wvware
           - gettext
+          - libffi
 
 run-name: Remove ${{ inputs.package_name }} from artifactory
 
