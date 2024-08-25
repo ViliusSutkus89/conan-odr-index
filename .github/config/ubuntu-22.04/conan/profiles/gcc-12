@@ -6,6 +6,9 @@ compiler=gcc
 compiler.version=12
 compiler.cppstd=20
 compiler.libcxx=libstdc++11
+{% set libc, libc_version = detect_api.detect_libc() %}
 
 [conf]
 tools.build:compiler_executables={'c': 'gcc-12', 'cpp': 'g++-12'}
+user.confvar:libc={{libc}}
+user.confvar:libc_version={{libc_version}}
